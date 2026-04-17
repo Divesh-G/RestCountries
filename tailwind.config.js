@@ -1,6 +1,4 @@
-import { defineConfig } from '@tailwindcss/vite'
-
-export default defineConfig({
+export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
@@ -35,4 +33,5 @@ export default defineConfig({
       },
     },
   },
-})
+  plugins: [],
+}
