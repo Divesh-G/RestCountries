@@ -1,70 +1,147 @@
-# Getting Started with Create React App
+# 🌐 Dibas — Modern Web Experience
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive two-page website built with React + Vite + Tailwind CSS, featuring smooth animations, live API integration, and a polished dark UI.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+### Page 1 — Landing / Introduction
+- Animated hero section with gradient text, floating orbs, and ambient blobs
+- Scroll-triggered reveal animations using IntersectionObserver
+- Hover transitions on feature cards
+- Stats section, features grid, and CTA banner
+- Smooth scroll-to-section behavior
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Page 2 — World Explorer (Dynamic Data)
+- Fetches live data from the REST Countries API (250+ countries)
+- Real-time search by country name or capital
+- Region filter (Africa, Americas, Asia, Europe, Oceania)
+- Sort by name (A–Z) or population
+- Loading skeleton cards while fetching
+- Error state with retry button
+- Empty state with clear filters option
+- Country cards with flag, capital, population, currency, and languages
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🎨 Design System recommended by Figma
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+| Token           | Value     |
+|-----------------|-----------|
+| Primary         | `#6366F1` |
+| Secondary       | `#06B6D4` |
+| Background      | `#0F172A` |
+| Card            | `#1E293B` |
+| Text Primary    | `#F8FAFC` |
+| Text Secondary  | `#94A3B8` |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠 Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Tool              | Purpose                        |
+|-------------------|--------------------------------|
+| React 18          | UI framework                   |
+| Vite 5            | Build tool & dev server        |
+| Tailwind CSS 3    | Utility-first styling          |
+| React Router v6   | Client-side routing            |
+| REST Countries API| Public API for country data    |
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🚀 Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prerequisites
+- Node.js 18+
+- npm 9+
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+# Clone the repository
+git clone https://github.com/Divesh-G/RestCountries.git
+cd RestCountries
 
-## Learn More
+# Install dependencies
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Start development server
+npm run dev
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-### Code Splitting
+### Build for Production
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm run build
+npm run preview
+```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📁 Project Structure
 
-### Making a Progressive Web App
+```
+modern-website/
+├── public/
+├── src/
+│   ├── components/
+│   │   └── Navbar.jsx        # Responsive navbar with scroll effect
+│   ├── pages/
+│   │   ├── Home.jsx          # Landing page with animations
+│   │   └── Explore.jsx       # Dynamic data page (REST Countries)
+│   ├── App.jsx               # Root component with routing
+│   ├── main.jsx              # Entry point
+│   └── index.css             # Global styles + Tailwind directives
+├── index.html
+├── vite.config.js
+├── tailwind.config.js
+├── postcss.config.js
+└── package.json
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🌍 API Reference
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+REST Countries API — [https://restcountries.com](https://restcountries.com)
 
-### Deployment
+```
+GET https://restcountries.com/v3.1/all?fields=name,capital,population,region,flags,currencies,languages
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Free, no authentication required
+- Returns data for 250+ countries
+- Fields: name, capital, population, region, flags, currencies, languages
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🚢 Deployment
+
+### Vercel (Recommended)
+
+```bash
+npm install -g vercel
+vercel
+```
+
+### Netlify
+
+```bash
+npm run build
+# Drag and drop the dist/ folder to netlify.com/drop
+```
+
+### GitHub Pages
+
+```bash
+# Add to vite.config.js: base: '/your-repo-name/'
+npm run build
+npx gh-pages -d dist
+```
+
+---
+
